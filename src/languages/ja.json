@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "マインスイーパー",
+    "menu": "メニュー",
+    "newGame": "新しいゲーム",
+    "level": "レベル",
+    "elementary": "初級",
+    "intermediate": "中級",
+    "advanced": "高級",
+    "custom": "カスタム",
+    "height": "高さ",
+    "width": "幅",
+    "mineCount": "地雷の数",
+    "settings": "設定",
+    "qMark": "“?”標記",
+    "music": "音楽",
+    "sound": "効果音",
+    "language": "言語",
+    "close": "閉める"
+  }
+}

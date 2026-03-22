@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "Minesweeper",
+    "menu": "Menu",
+    "newGame": "New Game",
+    "level": "Level",
+    "elementary": "Elementary",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "custom": "Custom",
+    "height": "Height",
+    "width": "Width",
+    "mineCount": "Mine Count",
+    "settings": "Settings",
+    "qMark": "“?” mark",
+    "music": "Music",
+    "sound": "Sound",
+    "language": "Language",
+    "close": "Close"
+  }
+}

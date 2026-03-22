@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "扫雷",
+    "menu": "菜单",
+    "newGame": "新游戏",
+    "level": "等级",
+    "elementary": "初级",
+    "intermediate": "中级",
+    "advanced": "高级",
+    "custom": "自定义",
+    "height": "高度",
+    "width": "宽度",
+    "mineCount": "雷数",
+    "settings": "设置",
+    "qMark": "“?”标记",
+    "music": "音乐",
+    "sound": "音效",
+    "language": "语言",
+    "close": "关闭"
+  }
+}

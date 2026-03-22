@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "掃雷",
+    "menu": "菜單",
+    "newGame": "新遊戲",
+    "level": "等級",
+    "elementary": "初級",
+    "intermediate": "中級",
+    "advanced": "高級",
+    "custom": "自訂",
+    "height": "高度",
+    "width": "寬度",
+    "mineCount": "雷數",
+    "settings": "設定",
+    "qMark": "“?”標記",
+    "music": "音樂",
+    "sound": "音效",
+    "language": "語言",
+    "close": "關閉"
+  }
+}

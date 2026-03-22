@@ -9,6 +9,11 @@ import {
 import './App.css';
 import { useTranslation } from 'react-i18next';
 
+const assets: Record<string, { default: string }> = import.meta.glob(
+  './assets/*.*',
+  { eager: true },
+);
+
 enum LEVEL {
   ELEMENTARY = 'elementary',
   INTERMEDIATE = 'intermediate',
@@ -26,57 +31,57 @@ enum MARK {
 const IMAGE: Record<number | string, HTMLImageElement> = {
   1: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/1.png';
+    img.src = assets['./assets/1.png'].default;
     return img;
   })(),
   2: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/2.png';
+    img.src = assets['./assets/2.png'].default;
     return img;
   })(),
   3: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/3.png';
+    img.src = assets['./assets/3.png'].default;
     return img;
   })(),
   4: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/4.png';
+    img.src = assets['./assets/4.png'].default;
     return img;
   })(),
   5: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/5.png';
+    img.src = assets['./assets/5.png'].default;
     return img;
   })(),
   6: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/6.png';
+    img.src = assets['./assets/6.png'].default;
     return img;
   })(),
   7: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/7.png';
+    img.src = assets['./assets/7.png'].default;
     return img;
   })(),
   8: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/8.png';
+    img.src = assets['./assets/8.png'].default;
     return img;
   })(),
   MINE: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/mine.png';
+    img.src = assets['./assets/mine.png'].default;
     return img;
   })(),
   MARK: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/mark.png';
+    img.src = assets['./assets/mark.png'].default;
     return img;
   })(),
   Q: (() => {
     const img = document.createElement('img');
-    img.src = '/src/assets/q.png';
+    img.src = assets['./assets/q.png'].default;
     return img;
   })(),
 };
@@ -287,7 +292,7 @@ function App() {
         setImg('fail');
         if (sound) {
           const au = soundRef.current!;
-          au.src = '/src/assets/fail.mp3';
+          au.src = assets['./assets/fail.mp3'].default;
           au.play();
         }
         for (let i = 0; i < height; i++) {
@@ -366,7 +371,7 @@ function App() {
         setImg('success');
         if (sound) {
           const au = soundRef.current!;
-          au.src = '/src/assets/success.mp3';
+          au.src = assets['./assets/success.mp3'].default;
           au.play();
         }
         for (let i = 0; i < height; i++) {
@@ -440,7 +445,9 @@ function App() {
         <button
           onClick={newGame}
           className='pic-btn'
-          style={{ backgroundImage: `url('/src/assets/${img}.png')` }}
+          style={{
+            backgroundImage: `url(${assets[`./assets/${img}.png`].default})`,
+          }}
         />
         <span className='info-txt'>{getTime()}</span>
       </div>
@@ -575,7 +582,13 @@ function App() {
             }}
           />
           <label htmlFor='music'>{t('music')}</label>
-          <audio autoPlay muted loop src='/src/assets/bgm.mp3' ref={musicRef} />
+          <audio
+            autoPlay
+            muted
+            loop
+            src={assets['./assets/bgm.mp3'].default}
+            ref={musicRef}
+          />
         </div>
         <div>
           <input

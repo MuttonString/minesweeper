@@ -45,7 +45,6 @@ body {
   font-size: 24px;
   padding: 4px 16px;
   height: fit-content;
-  cursor: pointer;
 }
 
 .menu-btn:hover {
@@ -70,7 +69,6 @@ body {
   border-radius: 8px;
   background-color: rgba(245, 245, 245, 0.5);
   background-size: contain;
-  cursor: pointer;
 }
 
 .pic-btn:hover {
@@ -132,7 +130,6 @@ body {
   border-radius: 4px;
   padding: 4px 16px;
   height: 32px;
-  cursor: pointer;
 }
 
 .drawer-btn:hover {
@@ -170,7 +167,9 @@ label {
   min-width: 100px;
 }
 
-input {
+input:not([type='number']),
+select,
+button {
   cursor: pointer;
 }
 

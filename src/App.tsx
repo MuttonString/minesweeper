@@ -98,7 +98,6 @@ function App() {
   const [mine, setMine] = useState(10);
   const [level, setLevel] = useState<LEVEL>(LEVEL.ELEMENTARY);
   const [qMark, setQMark] = useState(true);
-  const musicRef = useRef<HTMLAudioElement>(null);
   const [sound, setSound] = useState(true);
   const soundRef = useRef<HTMLAudioElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -164,13 +163,6 @@ function App() {
     const handleMouseDown = () => {
       if (img === 'normal') {
         setImg('click');
-      }
-
-      // 受浏览器限制，用户进行首次交互后才允许播放音乐，故在首次点击后播放音乐
-      const ele = musicRef.current!;
-      if (ele.muted) {
-        ele.muted = false;
-        ele.play();
       }
     };
 
@@ -427,6 +419,7 @@ function App() {
             setCnt(cnt + 1);
             break;
           case MARK.QUESTION:
+            mark[row][col] = MARK.NONE;
             ctx.clearRect(col * 26 + 2, row * 26 + 2, 24, 24);
             break;
         }
@@ -566,29 +559,6 @@ function App() {
             onChange={(e) => setQMark(e.target.checked)}
           />
           <label htmlFor='qMark'>{t('qMark')}</label>
-        </div>
-        <div>
-          <input
-            type='checkbox'
-            id='music'
-            defaultChecked
-            onChange={(e) => {
-              const ele = musicRef.current!;
-              if (e.target.checked) {
-                ele.play();
-              } else {
-                ele.pause();
-              }
-            }}
-          />
-          <label htmlFor='music'>{t('music')}</label>
-          <audio
-            autoPlay
-            muted
-            loop
-            src={assets['./assets/bgm.mp3'].default}
-            ref={musicRef}
-          />
         </div>
         <div>
           <input

@@ -183,10 +183,12 @@ function App() {
 
   const newGame = useCallback(() => {
     const ctx = canvasRef.current!.getContext('2d')!;
-    ctx.fillStyle = 'darkgray';
+    ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
     const w = width * 26 + 2,
       h = height * 26 + 2;
     ctx.clearRect(0, 0, w, h);
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = 'darkgray';
     for (let x = width * 26; x >= 0; x -= 26) {
       ctx.fillRect(x, 0, 2, h);
     }
@@ -294,6 +296,8 @@ function App() {
                 continue;
               }
               ctx.clearRect(2 + j * 26, 2 + i * 26, 24, 24);
+              ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+              ctx.fillRect(2 + j * 26, 2 + i * 26, 24, 24);
               if (i === row && j === col) {
                 ctx.fillStyle = 'rgba(255, 0, 0, 0.3)';
               } else {
@@ -372,6 +376,8 @@ function App() {
               continue;
             }
             ctx.clearRect(2 + j * 26, 2 + i * 26, 24, 24);
+            ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+            ctx.fillRect(2 + j * 26, 2 + i * 26, 24, 24);
             ctx.drawImage(IMAGE.MARK, 2 + j * 26, 2 + i * 26, 24, 24);
           }
         }
@@ -405,11 +411,15 @@ function App() {
           case MARK.NONE:
             mark[row][col] = MARK.FLAG;
             ctx.clearRect(col * 26 + 2, row * 26 + 2, 24, 24);
+            ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+            ctx.fillRect(col * 26 + 2, row * 26 + 2, 24, 24);
             ctx.drawImage(IMAGE.MARK, col * 26 + 2, row * 26 + 2, 24, 24);
             setCnt(cnt - 1);
             break;
           case MARK.FLAG:
             ctx.clearRect(col * 26 + 2, row * 26 + 2, 24, 24);
+            ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+            ctx.fillRect(col * 26 + 2, row * 26 + 2, 24, 24);
             if (qMark) {
               mark[row][col] = MARK.QUESTION;
               ctx.drawImage(IMAGE.Q, col * 26 + 2, row * 26 + 2, 24, 24);
@@ -421,6 +431,8 @@ function App() {
           case MARK.QUESTION:
             mark[row][col] = MARK.NONE;
             ctx.clearRect(col * 26 + 2, row * 26 + 2, 24, 24);
+            ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+            ctx.fillRect(col * 26 + 2, row * 26 + 2, 24, 24);
             break;
         }
       },

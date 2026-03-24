@@ -4,16 +4,15 @@ html {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  min-width: 600px;
-  min-height: 480px;
-  overflow: auto;
-  height: 100vh;
+  min-width: 800px;
+  min-height: 600px;
   margin: 0;
   padding: 0;
   user-select: none;
 }
 
 body {
+  background: transparent;
   margin: 0;
   padding: 32px;
 }
@@ -34,9 +33,10 @@ body {
 }
 
 .menu-btn {
-  position: absolute;
+  position: fixed;
   left: 32px;
   top: 32px;
+  z-index: 1;
   transition: all ease-out 0.2s;
   background: rgba(245, 245, 245, 0.3);
   backdrop-filter: blur(8px);
@@ -54,7 +54,7 @@ body {
 
 .info-txt {
   font-family: 'Arial';
-  font-size: 72px;
+  font-size: 42px;
   width: 3em;
 }
 
@@ -63,8 +63,8 @@ body {
 }
 
 .pic-btn {
-  width: 105px;
-  height: 105px;
+  width: 52.5px;
+  height: 52.5px;
   border: 1px solid silver;
   border-radius: 8px;
   background-color: rgba(245, 245, 245, 0.5);
@@ -79,12 +79,7 @@ body {
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
   z-index: 999;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  height: auto;
+  inset: 0;
 }
 
 .drawer {
